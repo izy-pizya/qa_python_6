@@ -33,43 +33,50 @@ class Test_drop_down_list:
         assert len(page.finders(TestLocators.how_much_does_it_cost_active)) > 0
 
     def test_several_scooters(self, driver):
-        element = BasePage.finder(*TestLocators.several_scooters)
+        page = BasePage(driver)
+        element = page.finder(TestLocators.several_scooters)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
-        assert len(driver.find_elements(*TestLocators.several_scooters_active)) > 0
+        assert len(page.finders(TestLocators.several_scooters_active)) > 0
 
     def test_how_is_it_calculated(self, driver):
-        element = driver.find_element(*TestLocators.how_is_it_calculated)
+        page = BasePage(driver)
+        element = page.finder(TestLocators.how_is_it_calculated)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
-        assert len(driver.find_elements(*TestLocators.how_is_it_calculated_active)) > 0
+        assert len(page.finders(TestLocators.how_is_it_calculated_active)) > 0
 
     def test_is_it_possible_to_order_a_scooter(self, driver):
-        element = driver.find_element(*TestLocators.is_it_possible_to_order_a_scooter)
+        page = BasePage(driver)
+        element = page.finder(TestLocators.is_it_possible_to_order_a_scooter)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
-        assert len(driver.find_elements(*TestLocators.is_it_possible_to_order_a_scooter_active)) > 0
+        assert len(page.finders(TestLocators.is_it_possible_to_order_a_scooter_active)) > 0
 
     def test_renew_your_subscription(self, driver):
-        element = driver.find_element(*TestLocators.renew_your_subscription)
+        page = BasePage(driver)
+        element = page.finder(TestLocators.renew_your_subscription)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
-        assert len(driver.find_elements(*TestLocators.renew_your_subscription_active)) > 0
+        assert len(page.finders(TestLocators.renew_your_subscription_active)) > 0
 
     def test_scooter_charger(self, driver):
-        element = driver.find_element(*TestLocators.scooter_charger)
+        page = BasePage(driver)
+        element = page.finder(TestLocators.scooter_charger)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
-        assert len(driver.find_elements(*TestLocators.scooter_charger_active)) > 0
+        assert len(page.finders(TestLocators.scooter_charger_active)) > 0
 
     def test_cancel_the_order(self, driver):
-        element = driver.find_element(*TestLocators.cancel_the_order)
+        page = BasePage(driver)
+        element = page.finder(TestLocators.cancel_the_order)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
-        assert len(driver.find_elements(*TestLocators.cancel_the_order_active)) > 0
+        assert len(page.finders(TestLocators.cancel_the_order_active)) > 0
 
     def test_distant_order(self, driver):
-        element = driver.find_element(*TestLocators.distant_order)
+        page = BasePage(driver)
+        element = page.finder(TestLocators.distant_order)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
-        assert len(driver.find_elements(*TestLocators.distant_order_active)) > 0
+        assert len(page.finders(TestLocators.distant_order_active)) > 0

@@ -34,5 +34,42 @@ class TestLocators:
 
     distant_order_active = (By.XPATH, '//div[@id="accordion__heading-7" and contains(@aria-expanded, "true")]')
 
+    # Order page
+
     order_button = (By.XPATH, '//button[@class="Button_Button__ra12g"]')
 
+    second_order_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_UltraBig__UU3Lp"]')
+
+    name_space = (By.XPATH, '//input[@placeholder="* Имя"]')
+
+    second_name_space = (By.XPATH, '//input[@placeholder="* Фамилия"]')
+
+    address = (By.XPATH, '//input[@placeholder="* Адрес: куда привезти заказ"]')
+
+    metro_station = (By.XPATH, '//input[@class="select-search__input"]')
+
+    phone_number = (By.XPATH, '//input[@placeholder="* Телефон: на него позвонит курьер"]')
+
+    confirm_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM"]')
+
+    metro_station_active = (By.XPATH, '//li[./button[./div[@class="Order_Text__2broi" and text()="Черкизовская"]]]')
+
+    # Next page of order
+
+    order_time = (By.XPATH, '//input[@class="Input_Input__1iN_Z Input_Responsible__1jDKN" and contains (@placeholder, "* Когда привезти самокат")]')
+
+    data_time = (By.XPATH, '//div[@class="react-datepicker__day react-datepicker__day--029"]')
+
+    rent_duration = (By.XPATH, '//div[@class="Dropdown-control"]')
+
+    five_days = (By.XPATH, '//div[@class="Dropdown-option" and text()="пятеро суток"]')
+
+    scooter_colour = (By.XPATH, '//label[@for="black"]')
+
+    comment_for_delivery = (By.XPATH, '//input[@class="Input_Input__1iN_Z Input_Responsible__1jDKN" and contains (@placeholder, "Комментарий для курьера")]')
+
+    deliver_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM"]')
+
+    accept_button_on_second_page = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM"]')
+
+    confirm_order_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Да"]')
