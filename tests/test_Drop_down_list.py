@@ -5,7 +5,7 @@ import pytest
 from conftest import *
 from XPATH import TestLocators
 from page_object.base_page import *
-
+from page_object.main_page import *
 
 
 #@allure.test('test')
@@ -18,7 +18,7 @@ class Test_drop_down_list:
             (TestLocators.several_scooters, TestLocators.several_scooters_active),
         ]
     )
-    def test_how_much_does_it_cost1(self, driver, element_for_click, element_enabled):
+    def test_all_test_in_one(self, driver, element_for_click, element_enabled):
         page = BasePage(driver)
         element = page.finder(element_for_click)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)

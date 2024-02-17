@@ -70,6 +70,6 @@ class TestLocators:
 
     deliver_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM"]')
 
-    accept_button_on_second_page = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM"]')
+    accept_button_on_second_page = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Заказать"]')
 
     confirm_order_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Да"]')
