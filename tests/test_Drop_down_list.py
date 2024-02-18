@@ -1,15 +1,12 @@
-import time
-
 import allure
 import pytest
 from conftest import *
-from XPATH import TestLocators
-from page_object.base_page import *
 from page_object.main_page import *
 
 
 #@allure.test('test')
 class Test_drop_down_list:
+
     # Параметризированный тест (можно добавить еще переменных, дабы покрыть все пункты всплывающего окна)
     @pytest.mark.parametrize(
         "element_for_click, element_enabled",
@@ -32,7 +29,7 @@ class Test_drop_down_list:
         element.click()
         assert len(page.finders(TestLocators.how_much_does_it_cost_active)) > 0
 
-    def test_several_scooters(self, driver):
+    def test_several_scooters(self ,click_to_first):
         page = BasePage(driver)
         element = page.finder(TestLocators.several_scooters)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
