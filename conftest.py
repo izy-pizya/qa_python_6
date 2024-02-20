@@ -1,16 +1,16 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+
 
 
 @pytest.fixture
 def driver():
-    o = Options()
-    o.add_experimental_option("detach", True)
-    o.add_experimental_option('excludeSwitches', ['enable-logging'])
-    o.page_load_strategy = 'eager'
-    driver = webdriver.Chrome(options=o)
+    service = Service(GeckoDriverManager().install())
+    driver = webdriver.Firefox(service=service)
     driver.maximize_window()
     yield driver
     driver.quit()
+
 

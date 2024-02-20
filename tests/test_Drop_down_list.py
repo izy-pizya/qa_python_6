@@ -29,7 +29,7 @@ class Test_drop_down_list:
         element.click()
         assert len(page.finders(TestLocators.how_much_does_it_cost_active)) > 0
 
-    def test_several_scooters(self ,click_to_first):
+    def test_several_scooters(self, click_to_first):
         page = BasePage(driver)
         element = page.finder(TestLocators.several_scooters)
         driver.execute_script("arguments[0].scrollIntoView(true);", element)

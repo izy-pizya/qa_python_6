@@ -1,52 +1,48 @@
 import time
-
-import allure
-import pytest
 from conftest import *
-from XPATH import TestLocators
-from page_object.base_page import *
+from page_object.order_page import *
+from page_object.main_page import *
+
 
 class Test_order:
     def test_order_by_first_button(self, driver):
-        page = BasePage(driver)
-        page.finder(TestLocators.order_button).click()
-        page.finder(TestLocators.name_space).send_keys('Измаил')
-        page.finder(TestLocators.second_name_space).send_keys('Набиулин')
-        page.finder(TestLocators.address).send_keys('Пушкина')
-        page.finder(TestLocators.metro_station).click()
-        page.finder(TestLocators.metro_station_active).click()
-        page.finder(TestLocators.phone_number).send_keys('899991328129')
-        page.finder(TestLocators.confirm_button).click()
-        # Next order page
-        page.finder(TestLocators.order_time).click()
-        page.finder(TestLocators.data_time).click()
-        page.finder(TestLocators.rent_duration).click()
-        page.finder(TestLocators.five_days).click()
-        page.finder(TestLocators.scooter_colour).click()
-        page.finder(TestLocators.comment_for_delivery).send_keys('Тестовый комментарий')
-        page.finder(TestLocators.deliver_button).click()
-        page.finder(TestLocators.accept_button_on_second_page).click()
-        page.finder(TestLocators.confirm_order_button).click()
+        order_page = Order_page(driver)
+
+        order_page.go_to_site()
+        order_page.name_field()
+        order_page.second_name_field()
+        order_page.address_field()
+        order_page.add_metro_station()
+        order_page.add_number()
+        order_page.choose_time()
+        order_page.order_time()
+        order_page.choose_color()
+        order_page.add_comment()
+        order_page.click_to_deliver_button()
+        order_page.click_to_accept_button_on_second_page()
+
+        time.sleep(10)
+
         #assert а хз что тут должно быть, сайт дальше не пускает
 
     def test_second_order_by_first_button(self, driver):
-        page = BasePage(driver)
-        page.finder(TestLocators.second_order_button).click()
-        page.finder(TestLocators.name_space).send_keys('Измаил')
-        page.finder(TestLocators.second_name_space).send_keys('Набиулин')
-        page.finder(TestLocators.address).send_keys('Пушкина')
-        page.finder(TestLocators.metro_station).click()
-        page.finder(TestLocators.metro_station_active).click()
-        page.finder(TestLocators.phone_number).send_keys('899991328129')
-        page.finder(TestLocators.confirm_button).click()
-        # Next order page
-        page.finder(TestLocators.order_time).click()
-        page.finder(TestLocators.data_time).click()
-        page.finder(TestLocators.rent_duration).click()
-        page.finder(TestLocators.five_days).click()
-        page.finder(TestLocators.scooter_colour).click()
-        page.finder(TestLocators.comment_for_delivery).send_keys('Тестовый комментарий')
-        page.finder(TestLocators.deliver_button).click()
-        page.finder(TestLocators.accept_button_on_second_page).click()
-        page.finder(TestLocators.confirm_order_button).click()
+        main_page = Main_page(driver)
+
+        main_page.go_to_site()
+
+        order_page = Order_page(driver)
+
+        order_page.click_to_second_order_button()
+        order_page.name_field()
+        order_page.second_name_field()
+        order_page.address_field()
+        order_page.add_metro_station()
+        order_page.add_number()
+        order_page.choose_time()
+        order_page.order_time()
+        order_page.choose_color()
+        order_page.add_comment()
+        order_page.click_to_deliver_button()
+        order_page.click_to_accept_button_on_second_page()
+
         #assert а хз что тут должно быть, сайт дальше не пускает
