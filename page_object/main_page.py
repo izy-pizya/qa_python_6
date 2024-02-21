@@ -18,6 +18,7 @@ class Main_page:
 
     def click_to_first_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.how_much_does_it_cost)
         page.finder(TestLocators.how_much_does_it_cost).click()
 
     def click_to_second(self):
@@ -27,6 +28,7 @@ class Main_page:
 
     def click_to_second_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.several_scooters)
         page.finder(TestLocators.several_scooters).click()
 
     def click_to_third(self):
@@ -36,6 +38,7 @@ class Main_page:
 
     def click_to_third_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.how_is_it_calculated)
         page.finder(TestLocators.how_is_it_calculated).click()
 
     def click_to_fourth(self):
@@ -45,6 +48,7 @@ class Main_page:
 
     def click_to_fourth_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.is_it_possible_to_order_a_scooter)
         page.finder(TestLocators.is_it_possible_to_order_a_scooter).click()
 
     def click_to_fifth(self):
@@ -54,6 +58,7 @@ class Main_page:
 
     def click_to_fifth_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.renew_your_subscription)
         page.finder(TestLocators.renew_your_subscription).click()
 
     def click_to_sixth(self):
@@ -63,6 +68,7 @@ class Main_page:
 
     def click_to_sixth_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.scooter_charger)
         page.finder(TestLocators.scooter_charger).click()
 
     def click_to_seventh(self):
@@ -72,6 +78,7 @@ class Main_page:
 
     def click_to_seventh_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.cancel_the_order)
         page.finder(TestLocators.cancel_the_order).click()
 
     def click_to_eighth(self):
@@ -81,4 +88,5 @@ class Main_page:
 
     def click_to_eighth_qestion(self):
         page = BasePage(self.driver)
+        page.wait(TestLocators.distant_order)
         page.finder(TestLocators.distant_order).click()
