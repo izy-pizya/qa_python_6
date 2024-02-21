@@ -13,7 +13,6 @@ class Order_page(BasePage):
 
     def name_field(self):
         page = BasePage(self.driver)
-        page.finder(TestLocators.order_button).click()
         page.finder(TestLocators.name_space).send_keys('Аллах')
 
     def second_name_field(self):
@@ -56,13 +55,13 @@ class Order_page(BasePage):
         page = BasePage(self.driver)
         page.finder(TestLocators.deliver_button).click()
 
-    def click_to_accept_button_on_second_page(self):
-        page = BasePage(self.driver)
-        page.finder(TestLocators.accept_button_on_second_page).click()
-
     def click_to_confirm_order_button(self):
         page = BasePage(self.driver)
         page.finder(TestLocators.confirm_order_button).click()
+
+    def click_on_first_order_button(self):
+        page = BasePage(self.driver)
+        page.finder(TestLocators.order_button).click()
 
     def click_to_second_order_button(self):
         page = BasePage(self.driver)

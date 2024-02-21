@@ -4,11 +4,9 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
 
 
-
 @pytest.fixture
 def driver():
-    service = Service(GeckoDriverManager().install())
-    driver = webdriver.Firefox(service=service)
+    driver = webdriver.Firefox()
     driver.maximize_window()
     yield driver
     driver.quit()

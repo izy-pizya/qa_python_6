@@ -68,8 +68,8 @@ class TestLocators:
 
     comment_for_delivery = (By.XPATH, '//input[@class="Input_Input__1iN_Z Input_Responsible__1jDKN" and contains (@placeholder, "Комментарий для курьера")]')
 
-    deliver_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM"]')
-
-    accept_button_on_second_page = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Заказать"]')
+    deliver_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Заказать"]')
 
     confirm_order_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Да"]')
+
+    status_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Посмотреть статус"]')
