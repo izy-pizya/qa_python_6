@@ -2,7 +2,7 @@ from XPATH import TestLocators
 from page_object.base_page import *
 
 
-class Order_page(BasePage):
+class OrderPage(BasePage):
     order_url = 'https://qa-scooter.praktikum-services.ru/order'
 
 
@@ -45,9 +45,9 @@ class Order_page(BasePage):
         page.finder(TestLocators.rent_duration).click()
         page.finder(TestLocators.five_days).click()
 
-    def choose_color(self):
+    def choose_color(self, locator):
         page = BasePage(self.driver)
-        page.finder(TestLocators.scooter_colour).click()
+        page.finder(locator).click()
 
     def add_comment(self):
         page = BasePage(self.driver)
@@ -66,10 +66,9 @@ class Order_page(BasePage):
         page.finder(TestLocators.order_button).click()
 
     def click_to_second_order_button(self):
-        page = BasePage(self.driver)
-        element = page.finder(TestLocators.second_order_button)
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-        element.click()
+        self.page = BasePage(self.driver)
+        self.page.go_to_element(TestLocators.second_order_button)
+        self.page.finder(TestLocators.second_order_button).click()
 
     def assert_url(self):
         assert self.driver.current_url == self.order_url

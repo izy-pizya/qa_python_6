@@ -2,7 +2,7 @@ from XPATH import TestLocators
 from page_object.base_page import *
 
 
-class Main_page:
+class MainPage(BasePage):
 
     main_url = "https://qa-scooter.praktikum-services.ru/"
 
@@ -14,11 +14,12 @@ class Main_page:
         return self.driver.get(self.base_url)
 
     def go_down(self, locator):
-        self.page = BasePage(self.driver)
-        element = self.page.finder(locator)
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        page = BasePage(self.driver)
+        page.go_to_element(locator)
 
     def click_to_question(self, locator):
         page = BasePage(self.driver)
-        page.wait(locator)
         page.finder(locator).click()
+
+    def assert_text(self, locator):
+        assert len(self.driver.find_elements(*locator)) > 0

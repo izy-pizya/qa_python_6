@@ -66,6 +66,8 @@ class TestLocators:
 
     scooter_colour = (By.XPATH, '//label[@for="black"]')
 
+    gray_color = (By.XPATH, '//label[@for="grey"]')
+
     comment_for_delivery = (By.XPATH, '//input[@class="Input_Input__1iN_Z Input_Responsible__1jDKN" and contains (@placeholder, "Комментарий для курьера")]')
 
     deliver_button = (By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Заказать"]')

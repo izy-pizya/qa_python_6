@@ -7,11 +7,15 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def finder(self, locator):
-        return self.driver.find_element(*locator)
+    def finder(self, locator, time=10):
+        return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
+                                                      message=f'Element not found in {locator}')
 
-    def finders(self, locator):
-        return self.driver.find_elements(*locator)
+    def finders(self, locator, time=10):
+        return WebDriverWait(self.driver, time).until(EC.presence_of_elements_located(locator),
+                                                      message=f'Element not found in {locator}')
 
-    def wait(self, locator):
-        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+    def go_to_element(self, locator):
+        self.page = BasePage(self.driver)
+        element = self.page.finder(locator)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
