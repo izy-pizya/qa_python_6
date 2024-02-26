@@ -30,7 +30,7 @@ class Test_order:
         order_page = Order_page(driver)
         order_page.click_on_first_order_button()
 
-        assert driver.current_url == 'https://qa-scooter.praktikum-services.ru/order'
+        order_page.assert_url()
 
     def test_second_order_by_second_button(self, driver):
         main_page = Main_page(driver)
@@ -39,4 +39,4 @@ class Test_order:
         order_page = Order_page(driver)
         order_page.click_to_second_order_button()
 
-        assert driver.current_url == 'https://qa-scooter.praktikum-services.ru/order'
+        order_page.assert_url()

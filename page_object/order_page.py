@@ -3,10 +3,12 @@ from page_object.base_page import *
 
 
 class Order_page(BasePage):
+    order_url = 'https://qa-scooter.praktikum-services.ru/order'
+
 
     def __init__(self, driver):
         self.driver = driver
-        self.base_url = "https://qa-scooter.praktikum-services.ru/order"
+        self.base_url = self.order_url
 
     def go_to_site(self):
         return self.driver.get(self.base_url)
@@ -68,3 +70,6 @@ class Order_page(BasePage):
         element = page.finder(TestLocators.second_order_button)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
+
+    def assert_url(self):
+        assert self.driver.current_url == self.order_url

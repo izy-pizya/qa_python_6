@@ -32,62 +32,62 @@ class Test_drop_down_list:
         click_to_first_item = Main_page(driver)
 
         click_to_first_item.go_to_site()
-        click_to_first_item.click_to_first()
-        click_to_first_item.click_to_first_qestion()
+        click_to_first_item.go_down(TestLocators.how_much_does_it_cost)
+        click_to_first_item.click_to_question(TestLocators.how_much_does_it_cost)
         assert len(driver.find_elements(*TestLocators.how_much_does_it_cost_active)) > 0
 
     def test_several_scooters(self, driver):
         click_to_second_item = Main_page(driver)
 
         click_to_second_item.go_to_site()
-        click_to_second_item.click_to_second()
-        click_to_second_item.click_to_second_qestion()
+        click_to_second_item.go_down(TestLocators.several_scooters)
+        click_to_second_item.click_to_question(TestLocators.several_scooters)
         assert len(driver.find_elements(*TestLocators.several_scooters_active)) > 0
 
     def test_how_is_it_calculated(self, driver):
         click_to_third_item = Main_page(driver)
 
         click_to_third_item.go_to_site()
-        click_to_third_item.click_to_third()
-        click_to_third_item.click_to_third_qestion()
+        click_to_third_item.go_down(TestLocators.how_is_it_calculated)
+        click_to_third_item.click_to_question()
         assert len(driver.find_elements(*TestLocators.how_is_it_calculated_active)) > 0
 
     def test_is_it_possible_to_order_a_scooter(self, driver):
         click_to_fourth_item = Main_page(driver)
 
         click_to_fourth_item.go_to_site()
-        click_to_fourth_item.click_to_fourth()
-        click_to_fourth_item.click_to_fourth_qestion()
+        click_to_fourth_item.go_down(TestLocators.is_it_possible_to_order_a_scooter)
+        click_to_fourth_item.click_to_question(TestLocators.is_it_possible_to_order_a_scooter)
         assert len(driver.find_elements(*TestLocators.is_it_possible_to_order_a_scooter_active)) > 0
 
     def test_renew_your_subscription(self, driver):
         click_to_fifth_item = Main_page(driver)
 
         click_to_fifth_item.go_to_site()
-        click_to_fifth_item.click_to_fifth()
-        click_to_fifth_item.click_to_fifth_qestion()
+        click_to_fifth_item.go_down(TestLocators.renew_your_subscription)
+        click_to_fifth_item.click_to_question(TestLocators.renew_your_subscription)
         assert len(driver.find_elements(*TestLocators.renew_your_subscription_active)) > 0
 
     def test_scooter_charger(self, driver):
         click_to_sixth_item = Main_page(driver)
 
         click_to_sixth_item.go_to_site()
-        click_to_sixth_item.click_to_sixth()
-        click_to_sixth_item.click_to_sixth_qestion()
+        click_to_sixth_item.go_down(TestLocators.scooter_charger)
+        click_to_sixth_item.click_to_question(TestLocators.scooter_charger)
         assert len(driver.find_elements(*TestLocators.scooter_charger_active)) > 0
 
     def test_cancel_the_order(self, driver):
         click_to_seventh_item = Main_page(driver)
 
         click_to_seventh_item.go_to_site()
-        click_to_seventh_item.click_to_seventh()
-        click_to_seventh_item.click_to_seventh_qestion()
+        click_to_seventh_item.go_down(TestLocators.cancel_the_order)
+        click_to_seventh_item.click_to_question(TestLocators.cancel_the_order)
         assert len(driver.find_elements(*TestLocators.cancel_the_order_active)) > 0
 
     def test_distant_order(self, driver):
         click_to_eighth_item = Main_page(driver)
 
         click_to_eighth_item.go_to_site()
-        click_to_eighth_item.click_to_eighth()
-        click_to_eighth_item.click_to_eighth_qestion()
+        click_to_eighth_item.go_down(TestLocators.distant_order)
+        click_to_eighth_item.click_to_question(TestLocators.distant_order)
         assert len(driver.find_elements(*TestLocators.distant_order_active)) > 0
