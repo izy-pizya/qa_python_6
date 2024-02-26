@@ -47,6 +47,7 @@ class TestDropDownList():
         click_to_third_item.go_to_site()
         click_to_third_item.go_down(TestLocators.how_is_it_calculated)
         click_to_third_item.click_to_question(TestLocators.how_is_it_calculated)
+        click_to_third_item.go_down(TestLocators.how_is_it_calculated)
         click_to_third_item.assert_text(TestLocators.how_is_it_calculated_active)
 
     def test_is_it_possible_to_order_a_scooter(self, driver):
